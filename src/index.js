@@ -115,7 +115,9 @@ function createPlayerNameInputs(numberOfPlayers) {
         <div class='name-container  player1'>
           <label for='name-input-1'>Name: </label>
           <input class='player-name-input' type='text' id='name-input-1' required />
-        </div>`;
+        </div>
+        <button id='name-button' class='game-button' type='submit'>Submit
+        </button>`;
   } else {
     nameInputsHtml += `
         <h1>Enter your names</h1>`;
@@ -126,10 +128,10 @@ function createPlayerNameInputs(numberOfPlayers) {
           <input class='player-name-input' type='text' id='name-input-${i}' required />
         </div>`;
     }
-  }
-  nameInputsHtml += `
-      <button id='name-button' class='game-button' type='submit'>Submit
+    nameInputsHtml += `
+      <button id='name-button' class='game-button player1' type='submit'>Submit
       </button>`;
+  }
 
   nameForm.html(nameInputsHtml);
 }

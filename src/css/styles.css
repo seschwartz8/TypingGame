@@ -21,7 +21,7 @@ body {
 
 body {
   background-color: #2e2d2d;
-  background-image: url(../img/racing.jpg);
+  background-image: url(../img/racing2.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -37,8 +37,8 @@ body {
   font-size: 1.2em;
   padding: 15px 45px;
   background-color: #f5d21f;
-  border-radius: 10px;
   font-weight: 600;
+  border-radius: 5px 5px 0 0;
 }
 
 /* Players selecting page */
@@ -56,19 +56,14 @@ body {
   align-items: center;
 }
 
+#header-container p {
+  font-size: 1.2em;
+}
+
 #title {
   font-size: 3em;
   margin-bottom: 20px;
   color: #e4e4e4;
-}
-
-#description {
-  background-color: #e4e4e4;
-  border: 15px solid #faeb9e;
-  border-radius: 15px;
-  padding: 30px;
-  color: #2e2d2d;
-  font-size: 1.3em;
 }
 
 em {
@@ -98,7 +93,7 @@ em {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  min-height: 80%;
+  min-height: 60%;
 }
 
 .name-container {
@@ -107,20 +102,17 @@ em {
   justify-content: space-around;
   font-size: 1.8em;
   color: #2e2d2d;
-  border-radius: 15px;
   height: 100px;
   border: none;
+  border-radius: 5px 5px 0 0;
 }
 
 .name-container input {
   width: 50%;
   height: 50%;
-  border-radius: 15px;
+  border-radius: 5px 5px 0 0;
 }
 
-#name-button {
-  background-color: #5fcca6;
-}
 /* Name form page */
 
 /* Game page */
@@ -139,18 +131,23 @@ em {
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin-bottom: 20px;
 }
 
 #stats-box {
   width: 100%;
-  color: #2e2d2d;
-  background-color: #c5eddf;
-  border-radius: 15px;
   padding: 10px 0;
   width: 80%;
+  margin-bottom: 30px;
+  font-size: 1.6em;
 }
+
+#stats-box h5 {
+  font-size: 1.2em;
+  color: #f5d21f;
+}
+
 #stats-box p {
-  font-size: 1.4em;
   margin: 15px 0;
 }
 
@@ -158,19 +155,19 @@ em {
   margin: 15px 0;
   color: #2e2d2d;
   min-height: 150px;
-  width: 100%;
-  line-height: 2.5;
+  width: 80%;
+  /* line-height: 2.5; */
   font-size: 1.4em;
   padding: 20px 70px;
-  text-align: justify;
+  /* text-align: justify; */
   white-space: nowrap;
   letter-spacing: 1px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 15px;
+  /* border-radius: 15px; */
   background-color: #e4e4e4;
-  border: 15px solid #faeb9e;
+  /* border: 15px solid #faeb9e; */
 }
 
 #paragraph {
@@ -180,7 +177,6 @@ em {
 }
 
 #paragraph-padding {
-  border-radius: 5%;
   display: flex;
   justify-content: flex-end;
   overflow: hidden;
@@ -190,8 +186,7 @@ em {
   display: flex;
   justify-content: space-around;
   margin: 15px 0;
-  width: 100%;
-  font-size: 28px;
+  width: 80%;
 }
 
 #paragraph-button {
@@ -247,6 +242,9 @@ span.next {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  background-color: #e4e4e4;
+  border-radius: 5px 5px 0 0;
+  color: #2e2d2d;
 }
 
 .results-section p {
