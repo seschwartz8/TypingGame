@@ -32,7 +32,7 @@ function formatParagraph(paragraph) {
   // Shorten paragrph to 100 words
   let shortWordsArray = paragraph.split(' ');
   if (shortWordsArray.length > 100) {
-    shortWordsArray = shortWordsArray.slice(0, 10);
+    shortWordsArray = shortWordsArray.slice(0, 101);
   } else {
     shortWordsArray = shortWordsArray.slice(0);
   }
