@@ -8,9 +8,6 @@ med grey: BFBFBF
 
 html,
 body {
-  background-image: url("../img/racing.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
   height: 100%;
   width: 100%;
   display: flex;

@@ -4,15 +4,19 @@ export class Word {
     this.isCorrect = false;
     this.timeCompleted = 0;
   }
+
   getIsCorrect() {
     return this.isCorrect;
   }
+
   setIsCorrecctToTrue() {
     this.isCorrect = true;
   }
+
   getTimeCompleted() {
     return this.timeCompleted;
   }
+
   setTimeCompleted(gameTime) {
     this.timeCompleted = gameTime;
   }

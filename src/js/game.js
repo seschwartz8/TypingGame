@@ -1,4 +1,4 @@
-import { Player } from "./player.js";
+import { Player } from './Player';
 
 export class Game {
   constructor() {
@@ -11,7 +11,7 @@ export class Game {
     this.charactersIndex = 0;
     this.wordsIndex = 0;
     this.inputtedCharacters = [];
-    this.paragraph = "";
+    this.paragraph = '';
     this.errors = 0;
     this.wordsCorrect = 0;
     this.currentPlayer;
@@ -33,98 +33,123 @@ export class Game {
   setCurrentPlayer(value) {
     this.currentPlayer = this.players[value];
   }
+
   getErrors() {
     return this.errors;
   }
+
   incrementErrors() {
     this.errors++;
   }
+
   setSeconds(seconds) {
     this.seconds = seconds;
   }
+
   getCharacters() {
     return this.characters;
   }
+
   setCharacters(paragraph) {
-    this.characters = paragraph.split("");
+    this.characters = paragraph.split('');
   }
+
   getWords() {
     return this.words;
   }
+
   getGameTime() {
     return this.gameTime;
   }
+
   setWords(paragraph) {
-    this.words = paragraph.split(" ");
+    this.words = paragraph.split(' ');
   }
+
   getCharacterIndex() {
     return this.charactersIndex;
   }
+
   resetCharacterIndex() {
     this.charactersIndex = 0;
   }
+
   incrementCharacterIndex() {
     this.charactersIndex++;
   }
+
   decrementCharacterIndex() {
     this.charactersIndex--;
   }
+
   getStartTime() {
     return this.startTime;
   }
+
   setStartTime() {
     this.startTime = Math.floor(Date.now() / 1000);
   }
+
   setGameTime(time) {
     this.gameTime = time;
   }
+
   setParagraph(paragraph) {
     this.paragraph = paragraph;
   }
+
   setText(paragraph) {
     this.setInputtedCharacters([]);
-    this.setCharacters("");
-    this.setWords("");
+    this.setCharacters('');
+    this.setWords('');
     this.setCharacters(paragraph);
     this.setWords(paragraph);
     this.setParagraph(paragraph);
     this.charactersIndex = 0;
     this.errors = 0;
   }
+
   getInputtedCharacters() {
     return this.inputtedCharacters;
   }
+
   setInputtedCharacters(characters) {
     return (this.inputtedCharacters = characters);
   }
+
   addMatchBool(char) {
     this.inputtedCharacters.push(char);
   }
+
   startGame() {
     this.round = false;
     this.setGameTime(0);
     this.setStartTime();
   }
+
   startTimer() {
     this.timer = setInterval(() => {
       this.updateGameTime();
     }, 1000);
   }
+
   clearTimer() {
     clearInterval(this.timer);
     this.gameTime = 0;
   }
+
   updateGameTime() {
     let timeNow = Math.floor(Date.now() / 1000);
     let gameTime = timeNow - this.startTime;
     this.setGameTime(gameTime);
     this.setSeconds(Math.floor(gameTime / 1000) % 60);
   }
+
   checkWord() {
     let matches = [];
     let i = 0;
     while (
-      this.characters[this.charactersIndex + i] !== " " &&
+      this.characters[this.charactersIndex + i] !== ' ' &&
       this.charactersIndex + i >= 0
     ) {
       matches.push(this.inputtedCharacters[this.charactersIndex + i]);
@@ -153,7 +178,7 @@ export class Game {
     if (pushedKey === 8) {
       if (
         this.charactersIndex > 0 &&
-        this.characters[this.charactersIndex] !== " "
+        this.characters[this.charactersIndex] !== ' '
       ) {
         this.decrementCharacterIndex();
         this.inputtedCharacters.pop();
@@ -178,6 +203,7 @@ export class Game {
       }
     }
   }
+
   calculateScore() {
     if (this.currentPlayer instanceof Player) {
       this.currentPlayer.setWordsPerMinute(this.calculateWordsPerMinute());
@@ -187,6 +213,7 @@ export class Game {
       this.currentPlayer.setErrors(this.getErrors());
     }
   }
+
   calculateWordsPerMinute() {
     if (this.gameTime === 0) {
       return 0;
@@ -197,6 +224,7 @@ export class Game {
       return wordsPerMinute;
     }
   }
+
   calculateCharactersPerMinute() {
     let numberOfCorrectMatches = 0;
     let charactersPerMinute = 0;
@@ -217,6 +245,7 @@ export class Game {
     }
     return charactersPerMinute;
   }
+
   isRoundOver() {
     if (this.inputtedCharacters.length === this.characters.length) {
       return true;
