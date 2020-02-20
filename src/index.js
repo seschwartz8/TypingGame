@@ -108,31 +108,28 @@ function updateEveryQuarterSecond(game) {
 
 function createPlayerNameInputs(numberOfPlayers) {
   let numberOfPlayersToNumber = parseInt(numberOfPlayers);
-  let nameForm = $('#name-form');
+  let nameForm = $('#name-form-page');
   let nameInputsHtml = ``;
   if (numberOfPlayersToNumber === 1) {
     nameInputsHtml += `
-      <div id='player-names-container' class='form-group'>
-        <div class='name-container rounded-white'>
+        <div class='name-container  player1'>
           <label for='name-input-1'>Name: </label>
           <input class='player-name-input' type='text' id='name-input-1' required />
         </div>`;
   } else {
     nameInputsHtml += `
-      <div id='player-names-container' class='form-group'>
         <h1>Enter your names</h1>`;
     for (let i = 1; i <= numberOfPlayersToNumber; i++) {
       nameInputsHtml += `
-        <div class='name-container rounded-white'>
+        <div class='name-container player${i}'>
           <label for='name-input-${i}'>Player ${i}</label>
           <input class='player-name-input' type='text' id='name-input-${i}' required />
         </div>`;
     }
   }
   nameInputsHtml += `
-      <button id='name-button' class='game-button rounded-white' type='submit'>Submit
-      </button>
-    </div>`;
+      <button id='name-button' class='game-button' type='submit'>Submit
+      </button>`;
 
   nameForm.html(nameInputsHtml);
 }
@@ -214,19 +211,20 @@ function removeKeyboardListeners() {
 $(document).ready(function() {
   const game = new Game();
   callAPI(game);
+  $('#name-form-page').hide();
   $('#game-page').hide();
   $('#results-page').hide();
 
   // ON NUMBER OF PLAYERS SUBMIT
-  $('#players-select').on('click', '.players-button', function() {
+  $('#players-select-container').on('click', '.players-button', function() {
     let playerCountInput = $(this).val();
-    $('#players-select').hide();
-    $('#header').hide();
+    $('#players-page').hide();
+    $('#name-form-page').show();
     createPlayerNameInputs(playerCountInput);
   });
 
   // ON SUBMIT OF USER NAME
-  $('#name-form').submit(function(event) {
+  $('#name-form-page').submit(function(event) {
     event.preventDefault();
     let nameInputs = [];
     nameInputs = $('.player-name-input');
@@ -235,7 +233,7 @@ $(document).ready(function() {
       let player = new Player(name);
       game.addPlayer(player);
     }
-    $('#name-form').hide();
+    $('#name-form-page').hide();
     $('#game-page').show();
     updateEveryQuarterSecond(game);
   });

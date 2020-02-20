@@ -1,9 +1,11 @@
 /* 
-light green: dbf0db
-green: 4FB84F
-blue: 1F8DD6
-light grey: DEDEDE
-med grey: BFBFBF
+turqoise: #5fcca6
+light turqoise: #c5eddf
+yellow: #f5d21f
+light yellow: #faeb9e
+light grey: #e4e4e4
+med grey: #BFBFBF
+dark: #2e2d2d
 */
 
 html,
@@ -13,25 +15,115 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
-  background-color: black;
-  color: whitesmoke;
+  padding: 20px;
+  color: #e4e4e4;
+}
+
+body {
+  background-color: #2e2d2d;
+  background-image: url(../img/racing.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .container {
   text-align: center;
   height: 100%;
 }
-.jumbotron {
-  font-size: 2em;
-  color: black;
-  opacity: 90%;
-  background: radial-gradient(circle farthest-side, whitesmoke, white);
-  border-radius: 5%;
+
+.game-button {
+  border: none;
+  font-size: 1.2em;
+  padding: 15px 45px;
+  background-color: #f5d21f;
+  border-radius: 10px;
+  font-weight: 600;
 }
-#name-form {
-  height: 100%;
+
+/* Players selecting page */
+#players-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 80%;
 }
+
+#header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#title {
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: #e4e4e4;
+}
+
+#description {
+  background-color: #e4e4e4;
+  border: 15px solid #faeb9e;
+  border-radius: 15px;
+  padding: 30px;
+  color: #2e2d2d;
+  font-size: 1.3em;
+}
+
+em {
+  font-weight: 700;
+}
+
+#players-select-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 200px;
+}
+
+.player1 {
+  background-color: #5fcca6;
+}
+
+.player2 {
+  background-color: #f5d21f;
+}
+/* Players selecting page */
+
+/* Name form page */
+#name-form-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 80%;
+}
+
+.name-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 1.8em;
+  color: #2e2d2d;
+  border-radius: 15px;
+  height: 100px;
+  border: none;
+}
+
+.name-container input {
+  width: 50%;
+  height: 50%;
+  border-radius: 15px;
+}
+
+#name-button {
+  background-color: #5fcca6;
+}
+/* Name form page */
+
+/* Game page */
 #game-page {
   display: flex;
   flex-direction: column;
@@ -41,42 +133,30 @@ body {
 }
 
 #player-name {
-  font-size: 3em;
+  color: #e4e4e4;
+  font-size: 4em;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
-#player-names-container h1 {
-  font-size: 3em;
-}
-#buttons {
-  display: flex;
-  justify-content: space-around;
-  width: 80%;
-}
-.white-box {
-  opacity: 0.95;
-  background: radial-gradient(circle farthest-side, whitesmoke, white);
-  border-radius: 5%;
-  color: black;
-}
-#title {
-  font-style: italic;
-  font-family: sans-serif;
-  font-size: 2em;
-}
+
 #stats-box {
   width: 100%;
+  color: #2e2d2d;
+  background-color: #c5eddf;
+  border-radius: 15px;
+  padding: 10px 0;
+  width: 80%;
 }
 #stats-box p {
   font-size: 1.4em;
+  margin: 15px 0;
 }
-#header {
-  width: 100%;
-}
+
 #paragraph-box {
-  color: black;
+  margin: 15px 0;
+  color: #2e2d2d;
   min-height: 150px;
   width: 100%;
   line-height: 2.5;
@@ -89,6 +169,8 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 15px;
+  background-color: #e4e4e4;
+  border: 15px solid #faeb9e;
 }
 
 #paragraph {
@@ -98,22 +180,28 @@ body {
 }
 
 #paragraph-padding {
-  opacity: 90%;
-  background: radial-gradient(circle farthest-side, whitesmoke, white);
   border-radius: 5%;
   display: flex;
   justify-content: flex-end;
   overflow: hidden;
 }
 
+#buttons-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 15px 0;
+  width: 100%;
+  font-size: 28px;
+}
+
 #paragraph-button {
   margin: 0 5%;
-  font-size: 28px;
+  background-color: #5fcca6;
 }
 
 #start-button {
   margin: 0 5%;
-  font-size: 28px;
+  background-color: #f5d21f;
 }
 
 span.neutral {
@@ -134,80 +222,9 @@ span.next {
   font-weight: 700;
   text-decoration: underline;
 }
-#player-names-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-#name-button {
-  height: 10%;
-  min-height: 100px;
-  width: 50%;
-  font-size: 3em;
-  float: right;
-  margin-top: 10%;
-}
-.name-container {
-  height: 150px;
-  width: 80%;
-  min-width: 480px;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  padding-right: 10px;
-}
-.name-container:first-of-type {
-  background-color: black;
-  border: 3px white solid;
-}
-.name-container:last-of-type {
-  background-color: #e60000;
-  border: 3px white solid;
-}
-.name-container label {
-  width: 43%;
-  height: 80%;
-  font-size: 2.5em;
-}
-.name-container input {
-  width: 56%;
-  height: 50%;
-  border-radius: 25px;
-  margin-left: 20px;
-  border-bottom: 2px solid white;
-  font-size: 2em;
-}
-#players-select {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 40%;
-}
-.rounded-white {
-  border-radius: 10px;
-  color: aliceblue;
-}
-.players-button {
-  width: 60%;
-  height: 20%;
-  font-size: 2em;
-  min-height: 50px;
-}
-.players-button:first-of-type {
-  background-color: #e60000;
-}
-.players-button:last-of-type {
-  background-color: black;
-}
-.game-button {
-  width: 20%;
-  font-size: 1em;
-  min-width: 200px;
-  background-color: #e60000;
-}
+/* Game page */
+
+/* Results page */
 #results-page {
   min-height: 700px;
   display: flex;
@@ -239,6 +256,7 @@ span.next {
 .results-section span {
   font-weight: 600;
 }
+/* Results page */
 
 /* Traffic light css */
 #traffic-light-bg {
@@ -413,6 +431,7 @@ span.next {
   display: inline-block;
   text-align: center;
   width: 780px;
+  margin: 15px 0;
 }
 
 #keyboard div {
@@ -421,14 +440,14 @@ span.next {
 
 #keyboard input {
   box-shadow: 5px 5px 5px #666;
-  background-color: #efefef;
+  background-color: #e4e4e4;
   width: 70px;
   height: 50px;
 }
 
 #keyboard input.buttonPressEffect {
-  background-color: #bfbfbf;
-  border: #666;
+  background-color: #5fcca6;
+  border: #5fcca6;
   box-shadow: 10px 10px 10px #666;
 }
 
