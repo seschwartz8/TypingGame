@@ -21,13 +21,14 @@ This application allows you to see how fast you're typing, as well as race again
 
 ## Known Bugs
 
-- No known bugs
+- Report of typing speed is not always reliable after more than one game.
 
 ## Technologies Used
 
 - Html
 - CSS
 - JavaScript
+- jQuery
 - Webpack
 - Babel
 - Dad Jokes API
